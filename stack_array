@@ -1,0 +1,78 @@
+#include<stdio.h>
+#include<conio.h>
+# define N 5 
+int stack[N];
+int top = -1;
+
+
+void push() 
+{
+int x ;
+printf("enter the value\n");
+scanf("%d",&x);
+if (top==N-1)
+{
+    printf("stack overflow\n");
+
+}
+else
+ {
+    top++;
+    stack[top]=x;
+
+
+}
+
+
+}
+void pop ()
+{
+if (top==-1)
+{
+    printf("stack underflow\n");
+
+}
+else {
+
+    int delete;
+    delete=stack[top];
+    top--;
+    printf("deleted element is : %d",delete);
+
+
+}
+
+}
+void display()
+{
+     printf("final stack is\n");
+    for(int i=top;i>=0;i--)
+    {
+
+       printf("%d\n",stack[i]);  
+
+    }
+}
+int main ()
+{
+int ch ; 
+do {
+
+printf("enter\n 1 for push :\n 2 for pop : \n 3 for display:\n ");
+scanf("%d",&ch);
+switch(ch)
+{
+case 1 : push();
+break;
+case 2 : pop();
+break;
+case 3 : display();
+break;
+default : printf("Invalid Choice");
+}
+
+
+}while(ch!=0);
+getch ();
+return 0 ;
+}
